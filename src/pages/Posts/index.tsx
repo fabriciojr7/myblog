@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { Eye } from '@phosphor-icons/react';
+import { ArrowRight } from '@phosphor-icons/react';
 import { PostProps } from '../../interfaces/PostProps';
 import { api } from '../../server/api';
 import { CardPost } from './styles';
@@ -11,7 +11,7 @@ export function Posts(){
   const {setPost} = useContext(PostContext);
   const navigate = useNavigate();
 
-  const getPosts = async () => {
+  const loadPosts = async () => {
     try {
       const {data} = await api.get('posts');
       setPosts(data);
@@ -21,7 +21,7 @@ export function Posts(){
   };
 
   useEffect(() => {
-    getPosts();
+    loadPosts();
   }, []);
 
   const handlePostNavigate = (post: PostProps) => {
@@ -38,7 +38,7 @@ export function Posts(){
         >
           <header>
             <h2>{post.title}</h2>
-            <Eye size={24}/>
+            <ArrowRight size={24}/>
           </header>
 
           <p>{post.body}</p>

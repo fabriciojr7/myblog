@@ -48,6 +48,7 @@ export const CardContent = styled.div<CardContentProps>`
 export const ContainerComments = styled.div`
   padding: 20px;
   background: ${({theme}) => theme.colors.background.main};
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   margin-top: 16px;
 
