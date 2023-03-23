@@ -2,17 +2,19 @@ import { DefaultTheme } from 'styled-components';
 
 export const themeDefault: DefaultTheme = {
   colors: {
-    background: '#18191a',
-    headerFooter: '#0f0f0f',
     text: '#d4d4d8',
+    background: {
+      light: '#3a3b3c',
+      main: '#242526',
+      dark: '#18191a',
+    },
     primary: {
-      lighter: '#a64efe',
-      light: '#6c02b2',
-      main: '#510080',
-      dark: '#2c004e',
+      lighter: '#7f9bff',
+      light: '#4d7afe',
+      main: '#1153fc',
+      dark: '#0333e3',
     },
   },
 };
 
-// #242526
-// #3a3b3c
+// headerFooter: '#0f0f0f',

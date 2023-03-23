@@ -5,12 +5,13 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-
+    font-family: 'Inter', sans-serif;
+    color: ${({theme}) => theme.colors.text};
   }
 
-  html, body{
-    background: ${({theme}) => theme.colors.background};
+  body{
+    padding: 0 16px;
+    background: ${({theme}) => theme.colors.background.dark};
   }
 
   button{
