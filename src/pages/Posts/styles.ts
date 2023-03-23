@@ -2,7 +2,9 @@ import styled from 'styled-components';
 
 export const CardPost = styled.div`
   width: 100%;
+  text-align: start;
   border-radius: 4px;
+  border: none;
   padding: 20px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   background: ${({theme}) => theme.colors.background.main};
