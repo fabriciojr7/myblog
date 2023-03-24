@@ -46,7 +46,7 @@ export function Users(){
           </div>
 
           <div className="icone">
-            <Eye size={24} color="#d4d4d8" />
+            <Eye size={24} />
           </div>
         </CardUser>
       ))}

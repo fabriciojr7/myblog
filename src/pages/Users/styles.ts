@@ -27,7 +27,6 @@ export const CardUser = styled.div`
   }
 
   span{
-    flex: 2;
     color: ${({theme}) => theme.colors.primary.main};
     font-size: 12px;
     font-weight: bold;
