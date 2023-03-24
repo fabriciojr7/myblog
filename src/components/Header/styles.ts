@@ -73,6 +73,7 @@ export const LinkMenu = styled.span`
   border-radius: 4px;
   font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
 
   &:hover{
     background: ${({theme}) => theme.colors.primary.light};
