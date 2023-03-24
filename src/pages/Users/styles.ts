@@ -61,4 +61,12 @@ export const CardUser = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 460px){
+    header{
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }
 `;

@@ -60,6 +60,19 @@ export function UserDetail(){
           <span>CEP: {user?.address.zipcode}</span>
         </div>
       </Card>
+
+      <h2>Empresa</h2>
+      <Card className='data-address'>
+        <div className="box">
+          <span>Nome: {user?.company.name}</span>
+
+        </div>
+
+        <div className="box">
+          <span>{user?.company.catchPhrase}</span>
+          <span>{user?.company.bs}</span>
+        </div>
+      </Card>
     </Container>
   );
 }

@@ -16,5 +16,3 @@ export const themeDefault: DefaultTheme = {
     },
   },
 };
-
-// headerFooter: '#0f0f0f',

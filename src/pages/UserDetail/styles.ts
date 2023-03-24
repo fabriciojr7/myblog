@@ -45,11 +45,12 @@ export const Card = styled.div`
     gap: 40px;
   }
 
-  &.data-address{
+  div + div{
+    margin-top: 8px;
+  }
 
-    div + div{
-      margin-top: 8px;
-    }
+  &.data-address{
+    margin-bottom: 24px;
   }
 
   span{
@@ -61,6 +62,19 @@ export const Card = styled.div`
 
     &.site{
       margin-top: 8px;
+    }
+  }
+
+  @media screen and (max-width: 460px){
+    .box{
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    header{
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
     }
   }
 `;

@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ArrowLeft } from '@phosphor-icons/react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { ArrowLeft, List, X } from '@phosphor-icons/react';
 
 import { Logo } from '../Logo';
-import { Container, ButtonBack } from './styles';
+import { Container, LinkMenu, ButtonBack } from './styles';
 
 export function Header(){
   const [pathName, setPathName] = useState('');
+  const [menuOpened, setMenuOpened] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -14,6 +15,15 @@ export function Header(){
     if(path === pathName){
       return 'active';
     }
+  };
+
+  const toggleMenu = () => {
+    setMenuOpened((prevState) => !prevState);
+  };
+
+  const handleNavigate = (link: string) => {
+    navigate(link);
+    setMenuOpened(false);
   };
 
   useEffect(() => {
@@ -30,10 +40,41 @@ export function Header(){
           <span>Voltar</span>
         </ButtonBack>
       ): (
-        <nav>
-          <Link to={'/'} className={getMenuActive('/')}>Posts</Link>
-          <Link to={'/users'} className={getMenuActive('/users')}>Usuários</Link>
-        </nav>
+        <>
+          <button
+            className='menu-open'
+            onClick={toggleMenu}
+          >
+            <List size={24} />
+          </button>
+
+          <nav className={menuOpened ? 'active' : ''}>
+            <div className='header-nav-mobile'>
+              <Logo/>
+
+              <button
+                className='menu-close'
+                onClick={toggleMenu}
+              >
+                <X size={24} />
+              </button>
+            </div>
+
+            <LinkMenu
+              className={getMenuActive('/')}
+              onClick={() => handleNavigate('/')}
+            >
+              Posts
+            </LinkMenu>
+            <LinkMenu
+              className={getMenuActive('/users')}
+              onClick={() => handleNavigate('/users')}
+            >
+              Usuários
+            </LinkMenu>
+          </nav>
+
+        </>
       )}
     </Container>
   );

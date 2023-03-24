@@ -18,5 +18,3 @@ declare module 'styled-components' {
     }
   }
 }
-
-// headerFooter: string
