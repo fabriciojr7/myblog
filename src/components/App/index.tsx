@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'styled-components';
-import { themeDefault } from '../../styles/themes/default';
-import GlobalStyles from '../../styles/global';
+import { themeDefault } from '../../assets/styles/themes/default';
+import GlobalStyles from '../../assets/styles/global';
 import { AppRoutes } from '../../routes/AppRoutes';
 import { Header } from '../Header';
 import { Container, Content } from './styles';

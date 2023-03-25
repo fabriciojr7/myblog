@@ -1,6 +1,6 @@
 import { Container } from './styles';
 
-import error from '../../assets/error.svg';
+import error from '../../assets/images/error.svg';
 
 export function Error(){
   return (

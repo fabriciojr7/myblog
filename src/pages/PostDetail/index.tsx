@@ -6,7 +6,7 @@ import { UserProps } from '../../interfaces/UserProps';
 import { api } from '../../server/api';
 import { CardContent, ContainerComments } from './styles';
 
-import empty from '../../assets/empty.svg';
+import empty from '../../assets/images/empty.svg';
 import { Loader } from '../../components/Loader';
 
 export function PostDetail(){
