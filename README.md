@@ -2,6 +2,8 @@
 
 # Sobre o projeto
 
+https://myblog-flax-sigma.vercel.app/
+
 MyBlog é uma aplicação Web que faz a listagem de posts simulando um blog, onde clicando em um determinado post poderá visualizar os seus comentários, e tambem trás uma listagem de usuários e clicando um um dos cards levará até os detalhes desse determinado usuário apresentando todas as suas informações.
 
 ## Layout web
