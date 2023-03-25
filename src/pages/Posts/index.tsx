@@ -1,11 +1,11 @@
 import { useContext, useEffect, useRef, useState } from 'react';
-import { ArrowRight } from '@phosphor-icons/react';
 import { PostProps } from '../../interfaces/PostProps';
 import { api } from '../../server/api';
 import { PostContext } from '../../contexts/PostContext';
 import { useNavigate } from 'react-router-dom';
-import { CardPost, LoadMore } from './styles';
+import {  LoadMore } from './styles';
 import { Error } from '../../components/Error';
+import { CardPost } from '../../components/CardPost';
 
 export function Posts(){
   const [posts, setPosts] = useState<PostProps[]>([]);
@@ -61,17 +61,13 @@ export function Posts(){
       {!error && (
         <>
           {posts.map((post) => (
+
             <CardPost
               key={post.id}
+              title={post.title}
+              body={post.body}
               onClick={() => handlePostNavigate(post)}
-            >
-              <header>
-                <h2>{post.title}</h2>
-                <ArrowRight size={24}/>
-              </header>
-
-              <p>{post.body}</p>
-            </CardPost>
+            />
           ))}
 
           {currentPage < totalPage.current && (
