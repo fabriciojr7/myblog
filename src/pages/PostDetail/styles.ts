@@ -12,7 +12,7 @@ export const CardContent = styled.div<CardContentProps>`
   background:  ${({theme}) => theme.colors.background.main};
 
   h2{
-    font-size: 18px;
+    font-size: ${({type}) => type === 'comment' ? '18px' : '20px'};
     font-weight: 500;
   }
 
@@ -33,7 +33,7 @@ export const CardContent = styled.div<CardContentProps>`
 
     &.body{
       display: block;
-      margin: 16px 0;
+      margin: ${({type}) => type === 'comment' ? '16px 0' : '16px 0 24px 0'};
     }
   }
 
@@ -56,5 +56,17 @@ export const ContainerComments = styled.div`
     font-size: 18px;
     text-align: center;
     margin-bottom: 16px;
+  }
+
+  .empty-comments{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    img{
+      width: 120px;
+      margin-bottom: 16px;
+    }
   }
 `;

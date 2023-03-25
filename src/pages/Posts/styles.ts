@@ -54,3 +54,31 @@ export const CardPost = styled.div`
     }
   }
 `;
+
+export const LoadMore = styled.button`
+  width: 100%;
+  padding: 8px;
+  margin-top: 16px;
+  transition: all 0.2s ease-in-out;
+
+  border: none;
+  background: ${({theme}) => theme.colors.primary.lighter};
+  opacity: 0.2;
+
+  span{
+    font-size: 16px;
+    font-weight: bold;
+    color: ${({theme}) => theme.colors.primary.main};
+    transition: color 0.2s ease-in-out;
+  }
+
+
+  &:hover{
+    background: ${({theme}) => theme.colors.primary.main};
+    opacity: 1;
+
+    span{
+      color: ${({theme}) => theme.colors.primary.lighter};
+    }
+  }
+`;

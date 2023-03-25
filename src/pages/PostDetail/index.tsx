@@ -6,6 +6,8 @@ import { UserProps } from '../../interfaces/UserProps';
 import { api } from '../../server/api';
 import { CardContent, ContainerComments } from './styles';
 
+import empty from '../../assets/empty.svg';
+
 export function PostDetail(){
   const {post} = useContext(PostContext);
   const [user, setUser] = useState<UserProps | null>(null);
@@ -25,9 +27,8 @@ export function PostDetail(){
 
       setUser(dataUser.data);
       setComments(dataComments.data);
-
     } catch(err) {
-      console.log('Home: ', err);
+      console.log(err);
     }
   };
 
@@ -49,6 +50,13 @@ export function PostDetail(){
 
       <ContainerComments>
         <h2 className='comments'>Comentários ({comments.length})</h2>
+
+        {comments.length <= 0 && (
+          <div className='empty-comments'>
+            <img src={empty} alt="empty" />
+            <span>Nenhum comentário foi enviado para este post!</span>
+          </div>
+        )}
 
         {comments.map((comment) => (
           <CardContent key={comment.id} type='comment'>
